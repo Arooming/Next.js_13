@@ -1,5 +1,5 @@
 import React from "react";
-// import Image from "next/image";
+import ButtonPage from "@/app/ButtonPage";
 
 type Props = {
   params: {
@@ -15,8 +15,10 @@ const fetchUserName = async (name: string) => {
 
 async function TodoId({ params: { name } }: Props) {
   const user = await fetchUserName(name);
+
   return (
     <div className="bg-slate-300 space-y-2 p-2 border-4 border-blue-400">
+      <ButtonPage />
       <img src={user.avatar_url} />
       <div>유저 로그인 : {user.login}</div>
       <div>유저 이름 : {user.name}</div>
@@ -26,5 +28,3 @@ async function TodoId({ params: { name } }: Props) {
 }
 
 export default TodoId;
-
-// 데이터 나오는 것까지는 확인
